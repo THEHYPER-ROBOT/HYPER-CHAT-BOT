@@ -8,13 +8,13 @@ import os
 import re
 
 
-API_ID = os.environ.get("API_ID", "none") 
-API_HASH = os.environ.get("API_HASH", "none") 
+API_ID = os.environ.get("API_ID", "21134445") 
+API_HASH = os.environ.get("API_HASH", "231c18ea7273824491d6bf05425ab74e") 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "none") 
 MONGO_URL = os.environ.get("MONGO_URL", "none")
 BOT_IMAGE = os.environ.get("BOT_IMAGE", "none")
 BOT_USERNAME = os.environ.get("BOT_USERNAME", "none")
-OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "none")
+OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "@THEHYPER_ACX")
 SUPPORT_GROUP = os.environ.get("SUPPORT_GROUP", "none")
 UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "none")
 
@@ -57,7 +57,7 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ 𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 ❱ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        "➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ Bᴀʙʏ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ]
                 
            ]
@@ -69,12 +69,12 @@ async def start_(client: Client, message: Message):
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{BOT_IMAGE}",
-        caption=f"""💥 𝐇𝐢! 𝐈'𝐦 𝐀 𝐀𝐝𝐯𝐚𝐧𝐜𝐞 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭 🌷.\n\n📌 𝐌𝐲 𝐍𝐚𝐦𝐞 𝐈𝐬 𝐍𝐨𝐛𝐢𝐭𝐚 𝐁𝐨𝐭 🌷 𝐅𝐨𝐫𝐦 𝐈𝐧𝐝𝐢𝐚 🇮🇳 \n\n🌷 𝐈'𝐦 𝐀 𝐀𝐫𝐭𝐢𝐟𝐢𝐜𝐢𝐚𝐥 𝐈𝐧𝐭𝐞𝐥𝐥𝐢𝐠𝐞𝐧𝐜𝐞 🌷\n\n𝐀𝐧𝐲 𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐓𝐨 [𝐑𝐞𝐩𝐨𝐫𝐭](https://t.me/{SUPPORT_GROUP})  🥀\n\n[𝐔𝐩𝐝𝐚𝐭𝐞𝐬](https://t.me/{UPDATES_CHANNEL}) 🌷\n\n /chatbot - [on|off]""",
+        caption=f"""Hɪ! I ᴀᴍ ᴀ Aᴅᴠᴀɴᴄᴇ Cʜᴀᴛ Bᴏᴛ 🌷.\n\n📌 Mʏ Nᴀᴍᴇ Is Hʏᴘᴇʀ Cʜᴀᴛ Bᴏᴛ🌷 Fʀᴏᴍ Iɴᴅɪᴀ🇮🇳 \n\n🌷 I ᴀᴍ ᴀ ᴀʀᴛɪғɪᴄɪᴀʟʟʏ Iɴᴛᴇʟʟɪɢᴇɴᴛ ʟɪᴋᴇ ᴀ Hᴜᴍᴀɴ 🌷\n\nAɴʏ Pʀᴏʙʟᴇᴍ Tᴏ [Rᴇᴘᴏʀᴛ 🥀](https://t.me/ACX_OWNER_DM_ROBOT)  🥀\n\n[Uᴘᴅᴀᴛᴇs ✨️](https://t.me/ACXBOTZ_UPDATE) 🌷\n\n /chatbot - [on|off]""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        " 💥 𝐉𝐨𝐢𝐧 𝐎𝐮𝐫 𝐂𝐡𝐚𝐭 𝐆𝐫𝐨𝐮𝐩 💞", url=f"https://t.me/+sIl5s2_0xvAyMjhl")
+                        "Jᴏɪɴ Oᴜʀ Cʜᴀᴛ Gʀᴏᴜᴘ 🥀", url=f"https://t.me/ACX_DISCUSSION")
                 ]
             ]
         ),
@@ -95,14 +95,14 @@ async def chatbotofd(client, message):
            await is_admins(chat_id)
         ):
            return await message.reply_text(
-                "💥 𝐇𝐞𝐲 𝐘𝐨𝐮 𝐀𝐫𝐞 𝐍𝐨𝐭 𝐀 𝐀𝐝𝐦𝐢𝐧 💥"
+                "Hᴀʏ Dᴜᴅᴇ Yᴏᴜ Aʀᴇ Nᴏᴛ A ᴀᴅᴍɪɴ 😒"
             )
     is_v = v.find_one({"chat_id": message.chat.id})
     if not is_v:
         v.insert_one({"chat_id": message.chat.id})
-        await message.reply_text(f"🌷 𝐍𝐨𝐛𝐢𝐭𝐚 𝐂𝐡𝐚𝐭𝐛𝐨𝐭 𝐃𝐢𝐬𝐚𝐛𝐥𝐞𝐝 🥀!\n\n𝐀𝐧𝐲 𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐓𝐨 [𝐑𝐞𝐩𝐨𝐫𝐭](https://t.me/{SUPPORT_GROUP})  🥀\n\n[𝐔𝐩𝐝𝐚𝐭𝐞𝐬](https://t.me/{UPDATES_CHANNEL}) 🌷")
+        await message.reply_text(f"🌷 Hʏᴘᴇʀ Cʜᴀᴛ Bᴏᴛ Is Aʟʀᴇᴀᴅʏ Dɴᴀʙʟᴇ🥀!\n\nAɴʏ Pʀᴏʙʟᴇᴍ Tᴏ [Rᴇᴘᴏʀᴛ 🥀](https://t.me/{SUPPORT_GROUP})  🥀\n\n[Uᴘᴅᴀᴛᴇs ✨️](https://t.me/{UPDATES_CHANNEL}) 🌷")
     if is_v:
-        await message.reply_text(f"🌷𝐍𝐨𝐛𝐢𝐭𝐚 𝐂𝐡𝐚𝐭𝐛𝐨𝐭 𝐈𝐬 𝐀𝐥𝐫𝐞𝐚𝐝𝐲 𝐃𝐢𝐬𝐚𝐛𝐥𝐞𝐝 🥀!\n\n𝐀𝐧𝐲 𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐓𝐨 [𝐑𝐞𝐩𝐨𝐫𝐭](https://t.me/{SUPPORT_GROUP})  🥀\n\n[𝐔𝐩𝐝𝐚𝐭𝐞𝐬](https://t.me/{UPDATES_CHANNEL}) 🌷")
+        await message.reply_text(f"🌷Hʏᴘᴇʀ Cʜᴀᴛ Bᴏᴛ Is Aʟʀᴇᴀᴅʏ Dɴᴀʙʟᴇ 🥀!\n\nAɴʏ Pʀᴏʙʟᴇᴍ Tᴏ [Rᴇᴘᴏʀᴛ 🥀](https://t.me/{SUPPORT_GROUP})  🥀\n\n[Uᴘᴅᴀᴛᴇs ✨️](https://t.me/{UPDATES_CHANNEL}) 🌷")
     
 
 @bot.on_message(
@@ -122,17 +122,17 @@ async def chatboton(client, message):
             )
     is_v = v.find_one({"chat_id": message.chat.id})
     if not is_v:           
-        await message.reply_text(f"💥 𝐍𝐨𝐛𝐢𝐭𝐚 𝐂𝐡𝐚𝐭𝐛𝐨𝐭 𝐈𝐬 𝐀𝐥𝐫𝐞𝐚𝐝𝐲𝐄𝐧𝐚𝐛𝐥𝐞𝐝🌷!\n\n𝐀𝐧𝐲 𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐓𝐨 [𝐑𝐞𝐩𝐨𝐫𝐭](https://t.me/{SUPPORT_GROUP})  🥀\n\n[𝐔𝐩𝐝𝐚𝐭𝐞𝐬](https://t.me/{UPDATES_CHANNEL}) 🌷")
+        await message.reply_text(f"💥 Hʏᴘᴇʀ Cʜᴀᴛ Bᴏᴛ Is Aʟʀᴇᴀᴅʏ Eɴᴀʙʟᴇ🌷!\n\nAɴʏ Pʀᴏʙʟᴇᴍ Tᴏ [Rᴇᴘᴏʀᴛ 🥀](https://t.me/ACX_OWNER_DM_ROBOT)  🥀\n\n[Uᴘᴅᴀᴛᴇs ✨️](https://t.me/ACXBOTZ_UPDATE) 🌷")
     if is_v:
         v.delete_one({"chat_id": message.chat.id})
-        await message.reply_text(f"💥 𝐍𝐨𝐛𝐢𝐭𝐚 𝐂𝐡𝐚𝐭𝐛𝐨𝐭 𝐈𝐬 𝐄𝐧𝐚𝐛𝐥𝐞𝐝 🌷!\n\n𝐀𝐧𝐲 𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐓𝐨 [𝐑𝐞𝐩𝐨𝐫𝐭](https://t.me/{SUPPORT_GROUP})  🥀\n\n[𝐔𝐩𝐝𝐚𝐭𝐞𝐬](https://t.me/{UPDATES_CHANNEL}) 🌷")
+        await message.reply_text(f"💥 Hʏᴘᴇʀ Cʜᴀᴛ Bᴏᴛ Is Eɴᴀʙʟᴇ 🌷!\n\nAɴʏ Pʀᴏʙʟᴇᴍ Tᴏ [Rᴇᴘᴏʀᴛ 🥀](https://t.me/ACX_OWNER_DM_ROBOT)  🥀\n\n[Uᴘᴅᴀᴛᴇs ✨️](https://t.me/ACXBOTZ_UPDATE) 🌷")
     
 
 @bot.on_message(
     filters.command("chatbot", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbot(client, message):
-    await message.reply_text(f"**🇮🇳 𝐔𝐬𝐚𝐠𝐞 🌷 :**\n/chatbot [on|off] 𝐎𝐧𝐥𝐲 𝐆𝐫𝐨𝐮𝐩 🇮🇳 !\n\n𝐀𝐧𝐲 𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐓𝐨 [𝐑𝐞𝐩𝐨𝐫𝐭](https://t.me/{SUPPORT_GROUP})  🥀\n\n[𝐔𝐩𝐝𝐚𝐭𝐞𝐬](https://t.me/{UPDATES_CHANNEL}) 🌷")
+    await message.reply_text(f"**🇮🇳 Usᴀɢᴇ 🌷 :**\n/chatbot [on|off] Oɴʟʏ Gʀᴏᴜᴘ 🇮🇳 !\n\nAɴʏ Pʀᴏʙʟᴇᴍ Tᴏ [Rᴇᴘᴏʀᴛ 🥀](https://t.me/ACX_DISCUSSION)🥀\n\n[Uᴘᴅᴀᴛᴇs ✨️](https://t.me/ACXBOTZ_UPDATE) 🌷")
 
 
 @bot.on_message(
@@ -354,5 +354,5 @@ async def vprivatesticker(client: Client, message: Message):
                await message.reply_sticker(f"{hey}")
        
 bot.start()
-print("NOBITA CHAT BOT BOOTED SUCCESSFULLY")
+print("HYPER CHAT BOT BOOTED SUCCESSFULLY")
 idle()
